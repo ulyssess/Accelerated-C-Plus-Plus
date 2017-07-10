@@ -33,3 +33,6 @@
 
 # Mac os
 *.dSYM
+
+# other
+tags
