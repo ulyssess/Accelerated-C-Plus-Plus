@@ -1,0 +1,3 @@
+
+    string spaces(maxlen + 1 - students[i].name.size(), ' ');
+    cout << spaces << students[i].name << " ";
