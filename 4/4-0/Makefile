@@ -13,5 +13,5 @@ Student_info.o: Student_info.cpp Student_info.h
 clean:
 	rm -f *.o
 
-disclean:
+distclean: clean
 	rm -f grade
