@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "vcat.h"
+#include "cat.h"
 
 using std::list;
 using std::string;
@@ -21,7 +21,7 @@ string::size_type width(const list<string>& v)
     return maxlen;
 }
 
-list<string> vcat(const list<string>& left, const list<string>& right)
+list<string> hcat(const list<string>& left, const list<string>& right)
 {
     list<string> ret;
     string::size_type maxlen;
@@ -54,6 +54,18 @@ list<string> vcat(const list<string>& left, const list<string>& right)
         }
 
         ret.push_back(line);
+    }
+
+    return ret;
+}
+
+list<string> vcat(const list<string>& top, const list<string>& bottom)
+{
+    list<string> ret = top;
+
+    for (list<string>::const_iterator iter = bottom.begin();
+            iter != bottom.end(); iter++) {
+        ret.push_back(*iter);
     }
 
     return ret;

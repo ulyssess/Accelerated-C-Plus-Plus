@@ -4,7 +4,7 @@
 #include <algorithm>
 
 #include "word.h"
-#include "vcat.h"
+#include "cat.h"
 
 using std::list;
 using std::string;
@@ -93,7 +93,7 @@ int main()
 
     // 将AB区进行横向合并
     list<string> resutl;
-    resutl = vcat(leftZone, rightZone);
+    resutl = hcat(leftZone, rightZone);
 
     // 输出结果
     for (list<string>::const_iterator i = resutl.begin(); i != resutl.end(); i++) {

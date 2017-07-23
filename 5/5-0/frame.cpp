@@ -42,7 +42,7 @@ vector<string> frame(const vector<string>& v)
     return ret;
 }
 
-vector<string> vcat(const vector<string>& left, const vector<string>& right)
+vector<string> hcat(const vector<string>& left, const vector<string>& right)
 {
     vector<string> ret;
     string::size_type maxlen;
@@ -71,6 +71,18 @@ vector<string> vcat(const vector<string>& left, const vector<string>& right)
     return ret;
 }
 
+vector<string> vcat(const vector<string>& top, const vector<string>& bottom)
+{
+    vector<string> ret = top;
+
+    for (vector<string>::const_iterator iter = bottom.begin();
+            iter != bottom.end(); iter++) {
+        ret.push_back(*iter);
+    }
+
+    return ret;
+}
+
 int main()
 {
     vector<string> v;
@@ -92,6 +104,7 @@ int main()
     //rv = v;
     //rv.insert(rv.end(), v1.begin(), v1.end());
 
+    //rv = hcat(v, v1);
     rv = vcat(v, v1);
 
     vector<string>::const_iterator iter;
